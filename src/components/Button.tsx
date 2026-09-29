@@ -10,7 +10,7 @@ const styles = {
 type Props = { children: ReactNode; variant?: keyof typeof styles; href?: string; external?: boolean; className?: string };
 
 export function Button({ children, variant = "primary", href, external, className = "" }: Props) {
-  const cls = `inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 text-base font-bold uppercase tracking-wide transition active:scale-[0.98] ${styles[variant]} ${className}`;
+  const cls = `inline-flex min-h-12 items-center justify-center rounded-full px-7 py-3 text-base font-bold uppercase tracking-wide transition-all duration-200 hover:scale-105 active:scale-[0.98] ${styles[variant]} ${className}`;
   if (!href)
     return (
       <span aria-disabled="true" className={`${cls} cursor-not-allowed opacity-50`}>
