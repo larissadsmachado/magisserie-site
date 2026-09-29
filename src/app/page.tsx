@@ -5,9 +5,8 @@ import { assets } from "@/lib/assets";
 import { site } from "@/lib/site";
 
 const cards = [
-  { href: "/pedir", title: "Fazer pedido", img: assets["bola-de-cristal"] },
+  { href: "/pedir", title: "Fazer pedido", img: assets["pergaminho"] },
   { href: "/cardapio", title: "Cardápio", img: assets.cookie },
-  { href: "/sobre", title: "Sobre", img: assets.pergaminho },
 ];
 
 export default function Home() {
@@ -24,15 +23,12 @@ export default function Home() {
           <Button href="/pedir" variant="primary">Fazer pedido</Button>
           <Button href="/cardapio" variant="secondary">Ver cardápio</Button>
         </div>
-        <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="font-bold underline underline-offset-4">
-          Siga no Instagram · {site.instagramHandle}
-        </a>
       </section>
 
-      <section aria-label="Explore" className="mt-14 grid grid-cols-3 gap-3 md:gap-6">
+      <section aria-label="Explore" className="mt-14 mx-auto grid max-w-2xl grid-cols-2 gap-4 sm:gap-6">
         {cards.map((c) => (
           <Link key={c.href} href={c.href} className="group block overflow-hidden rounded-2xl border-2 border-petroleo">
-            <Image {...c.img} alt="" sizes="(min-width:768px) 300px, 33vw" className="h-auto w-full transition group-hover:scale-105" />
+            <Image {...c.img} alt="" sizes="(min-width:768px) 380px, 50vw" className="h-auto w-full transition group-hover:scale-105" />
             <span className="block bg-petroleo py-2 text-center text-sm font-bold text-creme md:text-base">{c.title}</span>
           </Link>
         ))}

@@ -23,7 +23,7 @@ export function MobileNav() {
   const path = usePathname();
   return (
     <nav aria-label="Principal (celular)" className="fixed inset-x-0 bottom-0 z-20 border-t-2 border-petroleo bg-creme pb-[env(safe-area-inset-bottom)] md:hidden">
-      <ul className="grid grid-cols-4">
+      <ul className="grid" style={{ gridTemplateColumns: `repeat(${nav.length}, minmax(0, 1fr))` }}>
         {nav.map((i) => {
           const active = isActive(path, i.href);
           return (

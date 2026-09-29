@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Fazer pedido", description: "Escolha
 export default function Pedir() {
   return (
     <section className="mx-auto flex max-w-xl flex-col items-center gap-6 text-center">
-      <Image {...assets["bola-de-cristal"]} alt="" className="h-auto w-40 rounded-2xl" priority />
+      <Image {...assets["pergaminho"]} alt="" className="h-auto w-40 rounded-2xl" priority />
       <div>
         <h1 className="text-3xl font-bold md:text-4xl">Onde você está?</h1>
         <p className="mt-2">Escolha sua região para continuar o pedido.</p>

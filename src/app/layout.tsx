@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: site.name, template: `%s | ${site.name}` },
   description: site.description,
+  icons: {
+    icon: "/brand/logomarca.png",
+    apple: "/brand/logomarca.png",
+  },
   openGraph: { title: site.name, description: site.description, siteName: site.name, locale: "pt_BR", type: "website" },
   twitter: { card: "summary_large_image" },
 };

@@ -18,23 +18,31 @@ export const nav = [
   { href: "/", label: "Início" },
   { href: "/cardapio", label: "Cardápio" },
   { href: "/pedir", label: "Fazer pedido" },
-  { href: "/sobre", label: "Sobre" },
 ];
 
 export type Region = {
   id: string;
   name: string;
-  /** Somente dígitos com DDI+DDD, ex.: "5581999999999". Vazio = ainda não informado. */
+  /** Somente dígitos com DDI+DDD, ex.: "5581999999999". */
   whatsapp: string;
+  message?: string;
 };
+
+export const DEFAULT_WHATSAPP_MESSAGE = "Olá! Vi o Instagram da Magisserie e gostaria de fazer um pedido!";
 
 // Para adicionar uma região, basta incluir um item aqui.
 export const regions: Region[] = [
-  { id: "recife", name: "Recife", whatsapp: "" }, // TODO: número de Recife
-  { id: "aracaju", name: "Aracaju", whatsapp: "" }, // TODO: número de Aracaju
+  { id: "recife", name: "Recife", whatsapp: "5581983518988" },
+  { id: "aracaju", name: "Aracaju", whatsapp: "557999960101" },
 ];
 
-export const whatsappUrl = (r: Region) => (r.whatsapp ? `https://wa.me/${r.whatsapp}` : null);
+export const whatsappUrl = (r: Region) => {
+  if (!r.whatsapp) return null;
+  const digits = r.whatsapp.replace(/\D/g, "");
+  const formattedDigits = digits.startsWith("55") ? digits : `55${digits}`;
+  const text = r.message ?? DEFAULT_WHATSAPP_MESSAGE;
+  return `https://wa.me/${formattedDigits}?text=${encodeURIComponent(text)}`;
+};
 
 export type Product = {
   id: string;
@@ -47,16 +55,14 @@ export type Product = {
 
 export type Category = { id: string; name: string; products: Product[] };
 
-// Para uma nova categoria, basta incluir um item aqui.
-// Nomes reais; descrição e preço ainda são placeholders. Adicione `image` quando houver foto do produto.
 export const categories: Category[] = [
   {
     id: "cookies",
     name: "Cookies",
     products: [
-      { id: "cookie-tradicional", name: "Cookie tradicional" },
-      { id: "cookie-nutella", name: "Cookie com Nutella" },
-      { id: "cookie-kinder-bueno", name: "Cookie com Kinder Bueno" },
-    ].map((p) => ({ ...p, description: "[Descrição a ser fornecida]", price: "[Preço]" })),
+      { id: "cookie-tradicional", name: "Cookie tradicional", price: "R$ 10,00" },
+      { id: "cookie-nutella", name: "Cookie com Nutella", price: "R$ 15,00" },
+      { id: "cookie-kinder-bueno", name: "Cookie com Kinder Bueno", price: "R$ 17,00" },
+    ],
   },
 ];

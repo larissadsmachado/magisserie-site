@@ -23,7 +23,7 @@ export default function Cardapio() {
                   <div className="p-3">
                     <h3 className={`font-bold ${p.placeholder ? "italic text-petroleo/70" : ""}`}>{p.name}</h3>
                     {p.description && <p className="text-sm italic text-petroleo/70">{p.description}</p>}
-                    {p.price && <p className="mt-1 font-bold italic text-petroleo/70">{p.price}</p>}
+                    {p.price && <p className="mt-1 font-bold text-petroleo">{p.price}</p>}
                   </div>
                 </li>
               ))}
