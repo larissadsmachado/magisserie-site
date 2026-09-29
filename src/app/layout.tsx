@@ -1,10 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Fraunces, Nunito } from "next/font/google";
 import "./globals.css";
 import { DesktopNav, MobileNav } from "@/components/Nav";
 import { assets } from "@/lib/assets";
 import { nav, site } from "@/lib/site";
+
+const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito", display: "swap" });
+const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -17,7 +21,7 @@ export const viewport: Viewport = { themeColor: "#fef7ef" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${nunito.variable} ${fraunces.variable}`}>
       <body className="font-sans">
         <a href="#conteudo" className="sr-only focus:not-sr-only focus:absolute focus:z-30 focus:bg-creme focus:p-3">Ir para o conteúdo</a>
         <header className="sticky top-0 z-10 border-b-2 border-petroleo/15 bg-creme/95 backdrop-blur">

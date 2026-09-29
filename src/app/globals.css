@@ -5,6 +5,7 @@
 @layer base {
   html { scroll-behavior: smooth; }
   body { @apply bg-creme text-petroleo antialiased; }
+  h1, h2, h3 { @apply font-display; }
   :focus-visible { @apply outline outline-2 outline-offset-2 outline-petroleo; }
 }
 @media (prefers-reduced-motion: reduce) {

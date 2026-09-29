@@ -48,17 +48,15 @@ export type Product = {
 export type Category = { id: string; name: string; products: Product[] };
 
 // Para uma nova categoria, basta incluir um item aqui.
-// Os itens abaixo são PLACEHOLDERS: substituir pelos produtos reais.
+// Nomes reais; descrição e preço ainda são placeholders. Adicione `image` quando houver foto do produto.
 export const categories: Category[] = [
   {
     id: "cookies",
     name: "Cookies",
-    products: [1, 2, 3].map((n) => ({
-      id: `placeholder-${n}`,
-      name: "[Nome do produto]",
-      description: "[Descrição a ser fornecida]",
-      price: "[Preço]",
-      placeholder: true,
-    })),
+    products: [
+      { id: "cookie-tradicional", name: "Cookie tradicional" },
+      { id: "cookie-nutella", name: "Cookie com Nutella" },
+      { id: "cookie-kinder-bueno", name: "Cookie com Kinder Bueno" },
+    ].map((p) => ({ ...p, description: "[Descrição a ser fornecida]", price: "[Preço]" })),
   },
 ];

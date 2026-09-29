@@ -22,8 +22,8 @@ export default function Cardapio() {
                   <Image {...(p.image ?? assets.cookie)} alt="" sizes="(min-width:768px) 300px, 50vw" className="h-auto w-full" />
                   <div className="p-3">
                     <h3 className={`font-bold ${p.placeholder ? "italic text-petroleo/70" : ""}`}>{p.name}</h3>
-                    {p.description && <p className="text-sm">{p.description}</p>}
-                    {p.price && <p className="mt-1 font-bold">{p.price}</p>}
+                    {p.description && <p className="text-sm italic text-petroleo/70">{p.description}</p>}
+                    {p.price && <p className="mt-1 font-bold italic text-petroleo/70">{p.price}</p>}
                   </div>
                 </li>
               ))}

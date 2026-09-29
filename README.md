@@ -7,4 +7,4 @@
 - Nova página: criar `src/app/<nome>/page.tsx` e incluir em `nav`.
 
 ## Pendências (marcadas como [placeholder] no site)
-WhatsApp de Recife e Aracaju · chamada principal · textos do Sobre · produtos/preços · descrição/SEO · domínio (`NEXT_PUBLIC_SITE_URL`) · tipografia do site (hoje: fonte do sistema).
+WhatsApp de Recife e Aracaju · textos do Sobre · produtos/preços · descrição/SEO · domínio (`NEXT_PUBLIC_SITE_URL`) · (fontes: Fraunces nos títulos, Nunito no texto, via next/font).

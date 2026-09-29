@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button, Placeholder } from "@/components/Button";
+import { Button } from "@/components/Button";
 import { assets } from "@/lib/assets";
 import { site } from "@/lib/site";
 
@@ -16,7 +16,10 @@ export default function Home() {
       <section className="flex flex-col items-center gap-6 text-center">
         <h1 className="sr-only">Magisserie</h1>
         <Image {...assets.logo} alt="Magisserie: bruxinha de chapéu petróleo e cabelo alaranjado" priority className="w-64 sm:w-80 md:w-96 h-auto" />
-        <p><Placeholder>[Chamada principal — texto a definir]</Placeholder></p>
+        {/* Sugestão de chamada; editar livremente. */}
+        <p className="max-w-xs font-display text-2xl leading-snug sm:max-w-md sm:text-3xl">
+          Feito à mão, com um toque de magia.
+        </p>
         <div className="flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
           <Button href="/pedir" variant="primary">Fazer pedido</Button>
           <Button href="/cardapio" variant="secondary">Ver cardápio</Button>
