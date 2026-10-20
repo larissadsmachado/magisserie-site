@@ -43,7 +43,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="hidden border-t-2 border-petroleo/15 md:block">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-6 text-sm">
             <Image {...assets.gato} alt="" className="h-10 w-auto" />
-            <ul className="flex gap-6">{nav.map((i) => <li key={i.href}><Link href={i.href} className="hover:underline">{i.label}</Link></li>)}</ul>
+            <ul className="flex gap-6">
+              {nav.map((i) => (
+                <li key={i.href}>
+                  {i.external ? (
+                    <a href={i.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                      {i.label}
+                    </a>
+                  ) : (
+                    <Link href={i.href} className="hover:underline">
+                      {i.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
             <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">{site.instagramHandle}</a>
           </div>
         </footer>

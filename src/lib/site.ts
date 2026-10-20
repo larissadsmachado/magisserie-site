@@ -12,12 +12,20 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   // TODO: descrição oficial da marca
   description: "Site oficial da Magisserie. [DESCRIÇÃO A DEFINIR]",
+  fidelidadeUrl: "https://magisserie-fidelidade.larissadsmachado0.workers.dev/cartao",
 };
 
-export const nav = [
+export type NavItem = {
+  href: string;
+  label: string;
+  external?: boolean;
+};
+
+export const nav: NavItem[] = [
   { href: "/", label: "Início" },
   { href: "/cardapio", label: "Cardápio" },
   { href: "/pedir", label: "Fazer pedido" },
+  { href: "https://magisserie-fidelidade.larissadsmachado0.workers.dev/cartao", label: "Fidelidade", external: true },
 ];
 
 export type Region = {

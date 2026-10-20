@@ -1,6 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-nunito), system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  --color-creme: #fef7ef;
+  --color-petroleo: #21687a;
+  --color-menta: #6ac5be;
+  --color-pessego: #fea579;
+}
 
 @layer base {
   html { scroll-behavior: smooth; }
