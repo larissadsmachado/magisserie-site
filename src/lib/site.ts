@@ -85,7 +85,7 @@ export const categories: Category[] = [
         description: "Massa tradicional, gotas de chocolate ao leite e recheio de avelã",
         price: "R$ 15,00",
         image: {
-          src: "/cardapio/Cookie com Nutella.png",
+          src: "/cardapio/cookie nutella.png",
           width: 1254,
           height: 1254,
         },
