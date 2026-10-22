@@ -25,8 +25,8 @@ export const viewport: Viewport = { themeColor: "#fef7ef" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${nunito.variable} ${fraunces.variable}`}>
-      <body className="font-sans">
+    <html lang="pt-BR" className={`${nunito.variable} ${fraunces.variable}`} suppressHydrationWarning>
+      <body className="font-sans" suppressHydrationWarning>
         <a href="#conteudo" className="sr-only focus:not-sr-only focus:absolute focus:z-30 focus:bg-creme focus:p-3">Ir para o conteúdo</a>
         <header className="sticky top-0 z-10 border-b-2 border-petroleo/15 bg-creme/95 backdrop-blur">
           <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">

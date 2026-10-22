@@ -18,13 +18,24 @@ export default function Cardapio() {
           ) : (
             <ul className="grid grid-cols-2 gap-4 md:grid-cols-3">
               {c.products.map((p) => (
-                <li key={p.id} className="overflow-hidden rounded-2xl border-2 border-petroleo bg-white/50">
-                  <Image {...(p.image ?? assets.cookie)} alt="" sizes="(min-width:768px) 300px, 50vw" className="h-auto w-full" />
-                  <div className="p-3">
-                    <h3 className={`font-bold ${p.placeholder ? "italic text-petroleo/70" : ""}`}>{p.name}</h3>
-                    {p.description && <p className="text-sm italic text-petroleo/70">{p.description}</p>}
-                    {p.price && <p className="mt-1 font-bold text-petroleo">{p.price}</p>}
+                <li key={p.id} className="flex flex-col justify-between overflow-hidden rounded-2xl border-2 border-petroleo bg-white/50">
+                  <div>
+                    <Image
+                      {...(p.image ?? assets.cookie)}
+                      alt={p.name}
+                      sizes="(min-width:768px) 300px, 50vw"
+                      className="aspect-square w-full object-cover"
+                    />
+                    <div className="p-3">
+                      <h3 className={`font-bold ${p.placeholder ? "italic text-petroleo/70" : ""}`}>{p.name}</h3>
+                      {p.description && <p className="text-sm italic text-petroleo/70">{p.description}</p>}
+                    </div>
                   </div>
+                  {p.price && (
+                    <div className="px-3 pb-3">
+                      <p className="font-bold text-petroleo">{p.price}</p>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>

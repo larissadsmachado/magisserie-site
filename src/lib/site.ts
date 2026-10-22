@@ -68,9 +68,61 @@ export const categories: Category[] = [
     id: "cookies",
     name: "Cookies",
     products: [
-      { id: "cookie-tradicional", name: "Cookie tradicional", price: "R$ 10,00" },
-      { id: "cookie-nutella", name: "Cookie com Nutella", price: "R$ 15,00" },
-      { id: "cookie-kinder-bueno", name: "Cookie com Kinder Bueno", price: "R$ 17,00" },
+      {
+        id: "cookie-tradicional",
+        name: "Cookie tradicional",
+        description: "Massa tradicional, gotas de chocolate ao leite",
+        price: "R$ 10,00",
+        image: {
+          src: "/cardapio/Cookie tradicional.png",
+          width: 1254,
+          height: 1254,
+        },
+      },
+      {
+        id: "cookie-nutella",
+        name: "Cookie com Nutella",
+        description: "Massa tradicional, gotas de chocolate ao leite e recheio de avelã",
+        price: "R$ 15,00",
+        image: {
+          src: "/cardapio/Cookie com Nutella.png",
+          width: 1254,
+          height: 1254,
+        },
+      },
+      {
+        id: "cookie-kinder-bueno",
+        name: "Cookie com Kinder Bueno",
+        description: "Massa branca, gotas de chocolate ao leite, chocolate branco e creme bueno",
+        price: "R$ 17,00",
+        image: {
+          src: "/cardapio/Cookie Kinder Bueno.png",
+          width: 1254,
+          height: 1254,
+        },
+      },
+      {
+        id: "cookie-red-velvet",
+        name: "Cookie Red Velvet",
+        description: "Massa de red velvet, gotas de chocolate branco e recheio de brigadeiro de cream cheese",
+        price: "R$ 17,00",
+        image: {
+          src: "/cardapio/Cookie Red Velvet com Chocolate Branco.png",
+          width: 1254,
+          height: 1254,
+        },
+      },
+      {
+        id: "cookie-mirtilo",
+        name: "Cookie de Mirtilo",
+        description: "Massa de baunilha branca, gotas de chocolate branco, recheio de brigadeiro branco e geleia de mirtilo",
+        price: "R$ 18,00",
+        image: {
+          src: "/cardapio/Cookie Mirtilo.png",
+          width: 1254,
+          height: 1254,
+        },
+      },
     ],
   },
 ];
